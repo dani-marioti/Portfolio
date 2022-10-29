@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "seed": "ts-node-dev --transpile-only scripts/seed.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "build": "tsc",
+    "serve": "node dist/server.js"
   },
   "keywords": [],
   "author": "",

@@ -20,12 +20,13 @@ const server = app.listen(port, () => {
 })
 
 const closeServer = async () => {
-  console.info('Closing database connection');
+  console.info('💿 Closing database connection');
   await db.$disconnect()
 
-  console.info('Shutting server off');
+  console.info('💻 Shutting server off');
   server.close()
   process.exit(0)
 }
 
 process.on('SIGINT', closeServer)
+process.on('SIGTERM', closeServer)
