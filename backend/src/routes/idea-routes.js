@@ -1,3 +1,4 @@
+// rotas utilizando da biblioteca express
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/idea-controller')

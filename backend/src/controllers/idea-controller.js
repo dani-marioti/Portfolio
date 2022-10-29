@@ -1,8 +1,8 @@
-
+// requisições
 var ideiasDoBanco = ["aa", "bb", 'cc'];
 
 exports.get = (req, res) => {
-    // Pegar informações do banco e retorbar
+    // Pegar informações do banco e retornar
     res.status(200).send({
         status: "OK",
         ideias: ideiasDoBanco

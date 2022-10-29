@@ -1,1 +1,0 @@
-Express é a biblioteca para criar uma api rest (post/get/delete/put)
