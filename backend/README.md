@@ -20,6 +20,8 @@
 
   - [Node.js (versão 16)](https://nodejs.org/en/)
   - [Express](https://expressjs.com)
+  - [Postgresql](https://www.postgresql.org/docs/)
+  - [Prisma js](https://www.prisma.io/docs/)
   - [ESlint](https://eslint.org/docs/)
   
 ## Inicializando
