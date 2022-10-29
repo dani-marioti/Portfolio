@@ -87,16 +87,6 @@
       Ideia --> Reprovar    
   ```
   
-  ### Diagrama de classe
-  
-  ```mermaid
-   classDiagram
-       class Pato{
-        -peso
-         +nada()
-         +quack()
-       }
- ```
  ### Diagrama de Classe
  
  ```mermaid
@@ -146,6 +136,7 @@
         +aprovar()
         +reprovar()
     }
+    
 ```
 
             
