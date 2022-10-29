@@ -42,7 +42,9 @@
 - Analisar melhorias solicitadas e aprovadas para o sofware em questão
 - Visualizar novas solicitações, aprovar ou reprovar
 
-## Diagrama de estado
+## Diagramas
+
+### Diagrama de estado
 
  ```mermaid
     stateDiagram-v2
@@ -56,4 +58,31 @@
       Entrar --> Ideia
       Ideia --> Aprovar
       Ideia --> Reprovar    
+  ```
+  
+  ### Diagrama de classe
+  
+  ```mermaid
+  classDiagram
+    Home --|> NovaIdeia
+    Home : -String ideia
+    Home : -int status
+    NovaIdeia : -String titulo
+    NovaIdeia : -String descricao
+    NovaIdeia : -String nome
+    NovaIdeia : -String email
+
+    class Home{
+        +visualizarLista()
+        +acessarIdeia()
+        +nova()
+        +aprovada()
+        +reprovada()
+    }
+
+    class NovaIdeia{
+        +acessarIdeia()
+        +enviar()
+        +cancelar()
+    }
   ```
