@@ -31,3 +31,20 @@
   - Eslint
     - `npx eslint --init`
     - `npm run lint`
+    
+
+## Diagrama de estado
+
+ ```mermaid
+    stateDiagram-v2
+      state interface <<choice>>
+      [*] --> Portal
+      Portal --> interface
+      interface --> NovaIdeia: Cliente
+      interface --> Entrar: Analista
+      NovaIdeia --> Enviar
+      NovaIdeia --> Cancelar
+      Entrar --> Ideia
+      Ideia --> Aprovar
+      Ideia --> Reprovar    
+  ```
