@@ -34,8 +34,9 @@
     - `npx eslint --init`
     - `npm run lint`
     
+## Diagramas
 
-## Diagrama de estado
+### Diagrama de estado
 
  ```mermaid
     stateDiagram-v2
@@ -50,3 +51,42 @@
       Ideia --> Aprovar
       Ideia --> Reprovar    
   ```
+### Diagrama de classe
+  
+   ```mermaid
+   classDiagram
+    Home --|> Entrar
+    Entrar --|> Inicio
+    Inicio --|>  Analise
+    Home : -String ideia
+    Home : -int status
+    Entrar : -String login
+    Entrar : -String senha
+    Analise: -int situacao
+
+    class Entrar{
+        + login()
+    }
+
+    class Home{
+        +visualizarLista()
+        +acessarIdeia()
+        +nova()
+        +aprovada()
+        +reprovada()
+    }
+
+    class Inicio{
+        -String NovaIdeia
+        - int situacao
+        +visualizarLista()
+        +acessarIdeia()
+
+    }
+
+    class Analise{
+        +acessarIdeia()
+        +aprovar()
+        +reprovar()
+    }
+   ```
