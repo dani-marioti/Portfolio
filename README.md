@@ -80,5 +80,66 @@
   ```
   
   ### Diagrama de classe
+  
+  ```mermaid
+   classDiagram
+       class Pato{
+        -peso
+         +nada()
+         +quack()
+       }
+ ```
+ ### Diagrama de Classe
+ 
+ ```mermaid
+ classDiagram
+    Home --|> NovaIdeia
+    Home --|> Entrar
+    Entrar --|> Inicio
+    Inicio --|>  Analise
+    Home : -String ideia
+    Home : -int status
+    NovaIdeia : -String titulo
+    NovaIdeia : -String descricao
+    NovaIdeia : -String nome
+    NovaIdeia : -String email
+    Entrar : -String login
+    Entrar : -String senha
+    Analise: -int situacao
+
+    class Entrar{
+        + login()
+    }
+
+    class Home{
+        +visualizarLista()
+        +acessarIdeia()
+        +nova()
+        +aprovada()
+        +reprovada()
+    }
+
+    class Inicio{
+        -String NovaIdeia
+        - int situacao
+        +visualizarLista()
+        +acessarIdeia()
+
+    }
+
+    class NovaIdeia{
+        +acessarIdeia()
+        +enviar()
+        +cancelar()
+    }
+
+    class Analise{
+        +acessarIdeia()
+        +aprovar()
+        +reprovar()
+    }
+```
+
+            
 
 
