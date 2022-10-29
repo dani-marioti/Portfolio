@@ -15,6 +15,14 @@
   - Aplicativo de envio de ideias para um determinado software, apresentando duas interfaces:
     - Interface do cliente: Além de acessar a lista de ideias encaminhadas, de acordo com seu *status* e situação, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, por parte do cliente.
     - Inteface do analista: Visualização da lista de solicitações e função de aprovação ou reprovação de novas ideias. 
+    
+### Design do projeto - Figma
+
+- [Portal de Ideias](https://www.figma.com/file/M5gOjNuWJQ7vaumCCdAofh/Portal-de-Ideias-Simples?node-id=0%3A1)
+
+### Controle de tarefas - Trello
+
+- [Portfolio](https://trello.com/invite/b/3NnNrPQF/ATTIbb606dbf4d3ee433adab7b41a092a29594FAF6D3/portfolio)
 
 ## Tecnologias utilizadas
 
