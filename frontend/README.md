@@ -42,6 +42,8 @@
 - Analisar melhorias solicitadas e aprovadas para o sofware em questão
 - Visualizar novas solicitações, aprovar ou reprovar
 
+## Diagrama de estado
+
  ```mermaid
     stateDiagram-v2
       state interface <<choice>>
