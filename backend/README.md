@@ -20,7 +20,7 @@
 
   - [Node.js (versão 16)](https://nodejs.org/en/)
   - [Express](https://expressjs.com)
-  - [Postgresql](https://www.postgresql.org/docs/)
+  - [SQlite](https://www.sqlite.org/index.html)
   - [Prisma js](https://www.prisma.io/docs/)
   - [ESlint](https://eslint.org/docs/)
   
@@ -59,15 +59,16 @@
     Home --|> Entrar
     Entrar --|> Inicio
     Inicio --|>  Analise
-    Home : -String ideia
-    Home : -int status
-    NovaIdeia : -String titulo
-    NovaIdeia : -String descricao
-    NovaIdeia : -String nome
-    NovaIdeia : -String email
-    Entrar : -String login
-    Entrar : -String senha
-    Analise: -int situacao
+    Home : String ideia
+    Home : int status
+    NovaIdeia : int id
+    NovaIdeia : String titulo
+    NovaIdeia : String descricao
+    NovaIdeia : String nome
+    NovaIdeia : String email
+    Entrar : String login
+    Entrar : String senha
+    Analise: int situacao
 
     class Entrar{
         + login()
@@ -103,3 +104,36 @@
 
             
    ```
+   
+#### Usuário
+   
+ ```mermaid
+      classDiagram
+          User --> Suggestion
+          Suggestion--> Status
+          User : int id
+          User : String name
+          User : String email
+          User : String password
+          Suggestion : int number
+          Suggestion : String accDescription
+          Status : Aprovado
+          Status : Reprovado 
+  ```
+#### Ideia
+
+```mermaid
+     classDiagram
+    Idea --> Suggestion 
+    Idea : int id
+    Idea : String tittle
+    Idea : String description
+    Idea : String status
+    Idea : String name
+    Idea : String email
+    Suggestion : int number
+    Suggestion : String Description
+```
+
+
+        

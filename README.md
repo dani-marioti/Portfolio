@@ -28,9 +28,9 @@
 
 ### Dependências backend
 
-   - [Node.js (versão 16)](https://nodejs.org/en/)
+  - [Node.js (versão 16)](https://nodejs.org/en/)
   - [Express](https://expressjs.com)
-  - [Postgresql](https://www.postgresql.org/docs/)
+  - [SQlite](https://www.sqlite.org/index.html)
   - [Prisma js](https://www.prisma.io/docs/)
   - [ESlint](https://eslint.org/docs/)
   
