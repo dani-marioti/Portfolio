@@ -25,9 +25,7 @@ const homeStyle = StyleSheet.create({
   },
   button2: {
     padding: 6,
-    // alignSelf: "center",
     borderRadius: 5,
-    // left: 370,
     fontWeight: "bold",
     textDecorationLine: 'underline'
   }

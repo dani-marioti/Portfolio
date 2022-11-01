@@ -31,7 +31,7 @@ const loginStyle = StyleSheet.create({
     marginBottom: 15,
     width: 320,
     height: 50,
-    borderRadius: 5
+    borderRadius: 5,
   },
   login__button: {
     padding: 12,

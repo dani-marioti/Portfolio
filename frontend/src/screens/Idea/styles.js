@@ -3,20 +3,20 @@ import { StyleSheet } from "react-native";
 const ideaStyle = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
         justifyContent: 'center',
+        padding: 7
     },
     darkbg: {
-        backgroundColor: "#333"
+        backgroundColor: "#FFFF"
     },
     idea__button: {
         padding: 12,
         backgroundColor: "#40e0d0",
         alignSelf: "center",
-        borderRadius: 5,
-        width: 320,
-        height: 50
+        width: 367,
+        height: 50,
+        borderWidth: 1,
+        borderRadius: 7
     },
     idea__buttonText: {
         fontWeight: "bold",
@@ -26,50 +26,53 @@ const ideaStyle = StyleSheet.create({
     },
     ideaText: {
         fontWeight: "bold",
-        fontSize: 22,
+        fontSize: 30,
         alignSelf: "center"
     },
     idea__input: {
-        backgroundColor: "#fff",
+        
         alignSelf: "center",
         fontSize: 14,
         padding: 7,
         marginBottom: 20,
-        width: 320,
+        width: 367,
         height: 50,
-        borderRadius: 5
+        borderWidth: 1,
+        borderRadius: 7
     },
     idea__inputDescription: {
         alignSelf: "center",
         fontSize: 14,
         padding: 7,
         marginBottom: 20,
-        width: 320,
+        width: 367,
         height: 200,
-        borderRadius: 5
+        borderWidth: 1,
+        borderRadius: 7
     },
     idea__form: {
-        width: "100%"
+        width: "80%"
     },
     name: {
-        height: 100,
-        width: 100,
+        alignSelf: "center",
         fontSize: 14,
         padding: 7,
         marginBottom: 20,
-        border: 5,
-        alignSelf: "center",
+        width: 180,
+        height: 50,
+        borderWidth: 1,
+        borderRadius: 7
 
     },
     email: {
-        height: 100,
-        flex: 1,
+        alignSelf: "center",
         fontSize: 14,
         padding: 7,
         marginBottom: 20,
-        border: 5,
-        alignSelf: "center",
-
+        width: 180,
+        height: 50,
+        borderWidth: 1,
+        borderRadius: 7
     }
 
 });

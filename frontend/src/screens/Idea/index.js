@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
 import { ideaStyle } from './styles';
 import apiIdeas, { ideaApi } from '../../services/ideias-api';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 class Idea extends Component {
 
-    sendIdea = async (idea) => {
-        console.log(idea)
-        let data = await apiIdeas.sendIdea(idea);
-    }
+  sendIdea = async (idea) => {
+    console.log(idea)
+    let data = await apiIdeas.sendIdea(idea);
+  }
 
-    render() {
-        return (
-
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
-                <View>
-                    <Text style={ideaStyle.ideaText}>Compartilhe sua ideia</Text>
-                </View>
-                <View style={ideaStyle.idea__form}>
-                    <TextInput style={ideaStyle.idea__input} placeholder='Qual sua ideia?' />
-                    <TextInput style={ideaStyle.idea__inputDescription} placeholder='Descreva como seria este recurso' />
-                    <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <TextInput style={ideaStyle.name} placeholder='Nome' />
-                        <TextInput style={ideaStyle.email} placeholder='E-mail' />
-                    </View>
-                    <TouchableOpacity onPress={() => this.sendIdea("IDEIA: NOVO BOTAO")} style={ideaStyle.idea__button}>
-                        <Text style={ideaStyle.idea__buttonText}>Enviar ideia</Text>
-                    </TouchableOpacity>
-                </View>
+  render() {
+    return (
+      <KeyboardAvoidingView style={[ideaStyle.container, ideaStyle.darkbg]}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
+          <View>
+            <Text style={ideaStyle.ideaText}>Compartilhe sua ideia</Text>
+          </View>
+          <SafeAreaView>
+            <TextInput style={ideaStyle.idea__input} placeholder='Qual sua ideia?' />
+            <TextInput style={ideaStyle.idea__inputDescription} placeholder='Descreva como seria este recurso' />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 14 }}>
+              <TextInput style={ideaStyle.name} placeholder='Nome' />
+              <TextInput style={ideaStyle.email} placeholder='E-mail' />
             </View>
-
-        );
-    }
+            <TouchableOpacity onPress={() => this.sendIdea("IDEIA: NOVO BOTAO")} style={ideaStyle.idea__button}>
+              <Text style={ideaStyle.idea__buttonText}>Enviar ideia</Text>
+            </TouchableOpacity>
+          </SafeAreaView>
+        </View>
+      </KeyboardAvoidingView>
+    );
+  }
 }
 
 export default Idea;
