@@ -14,7 +14,7 @@ class Idea extends Component {
   render() {
     return (
       <KeyboardAvoidingView style={[ideaStyle.container, ideaStyle.darkbg]}>
-        <View style={{ flex: 1, backgroundColor: 'white' }}>
+        <View style={{ flex: 0, backgroundColor: 'white' }}>
           <View>
             <Text style={ideaStyle.ideaText}>Compartilhe sua ideia</Text>
           </View>

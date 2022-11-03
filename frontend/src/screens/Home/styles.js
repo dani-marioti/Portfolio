@@ -14,8 +14,7 @@ const homeStyle = StyleSheet.create({
     borderRadius: 5,
     width: 100,
     height: 30,
-    margin: 5,
-    // alignSelf: 'flex-end'
+    margin: 5
   },
   buttonText: {
     fontWeight: "bold",

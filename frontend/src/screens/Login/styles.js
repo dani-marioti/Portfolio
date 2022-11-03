@@ -3,15 +3,12 @@ import { StyleSheet } from "react-native";
 const loginStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
   darkbg: {
-    backgroundColor: "#333"
-  },
-  login__logomarca: {
-    marginBottom: 10
+    backgroundColor: "#FFF"
   },
   login__msg: (text = 'none') => ({
     fontWeight: "bold",
@@ -21,7 +18,7 @@ const loginStyle = StyleSheet.create({
     display: text
   }),
   login__form: {
-    width: "80%"
+    width: "100%"
   },
   login__input: {
     backgroundColor: "#fff",
@@ -31,7 +28,8 @@ const loginStyle = StyleSheet.create({
     marginBottom: 15,
     width: 320,
     height: 50,
-    borderRadius: 5,
+    borderWidth: 1,
+    borderRadius: 7
   },
   login__button: {
     padding: 12,
@@ -48,10 +46,11 @@ const loginStyle = StyleSheet.create({
     color: "#FFFFFF"
   },
   login__forgotPassword: {
-    padding: 4,
+    padding: 5,
     alignSelf: "center",
     fontSize: 14,
-    color: "#FFFFFF"
+    fontWeight: "bold",
+    textDecorationLine: 'underline'
   }
 
 });
