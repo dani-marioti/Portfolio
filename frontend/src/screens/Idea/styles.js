@@ -15,7 +15,6 @@ const ideaStyle = StyleSheet.create({
         alignSelf: "center",
         width: 367,
         height: 50,
-        borderWidth: 1,
         borderRadius: 7
     },
     idea__buttonText: {
@@ -37,7 +36,8 @@ const ideaStyle = StyleSheet.create({
         marginBottom: 20,
         width: 367,
         height: 50,
-        borderWidth: 1,
+        fontWeight: "bold",
+        backgroundColor: '#ededed',
         borderRadius: 7
     },
     idea__inputDescription: {
@@ -47,8 +47,9 @@ const ideaStyle = StyleSheet.create({
         marginBottom: 20,
         width: 367,
         height: 200,
-        borderWidth: 1,
-        borderRadius: 7
+        borderRadius: 7,
+        fontWeight: "bold",
+        backgroundColor: '#ededed'
     },
     idea__form: {
         width: "80%"
@@ -60,7 +61,8 @@ const ideaStyle = StyleSheet.create({
         marginBottom: 20,
         width: 180,
         height: 50,
-        borderWidth: 1,
+        fontWeight: "bold",
+        backgroundColor: '#ededed',
         borderRadius: 7
 
     },
@@ -71,8 +73,13 @@ const ideaStyle = StyleSheet.create({
         marginBottom: 20,
         width: 180,
         height: 50,
-        borderWidth: 1,
+        fontWeight: "bold",
+        backgroundColor: '#ededed',
         borderRadius: 7
+    },
+    Image:{
+        width:50,
+        height:50
     }
 
 });
