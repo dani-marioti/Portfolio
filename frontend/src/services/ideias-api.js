@@ -4,8 +4,7 @@ let apiIdeas = {}
 
 apiIdeas.sendIdea = async (idea) => {
     console.log(idea);
-    // ip 
-    axios.post(`http://locahost:3000/idea`, idea, null)
+    axios.post(`http://192.168.1.40:3000/idea`, idea, null)
     .then(res => {
         console.log(res.data)
         // 
@@ -18,7 +17,7 @@ apiIdeas.sendIdea = async (idea) => {
 
 
 apiIdeas.getIdeas = async () => {
-    let data = await axios.get(`http://locahost:3000/idea`)
+    let data = await axios.get(`http://192.168.1.40:3000/idea`)
     // .then(res => {
     //     console.log(res.data)
     //     // 

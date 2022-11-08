@@ -30,10 +30,12 @@ const homeStyle = StyleSheet.create({
   },
   item: {
     backgroundColor: '#ededed',
-    padding: 30,
+    padding: 10,
+    // height: 100,
     marginVertical: 8,
     marginHorizontal: 20,
-    borderRadius: 7
+    borderRadius: 7,
+    flexDirection: 'row'
 }
 
 });

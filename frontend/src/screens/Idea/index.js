@@ -47,7 +47,7 @@ class Idea extends Component {
               this.setState({ title: text })
             }
             } style={ideaStyle.idea__input} placeholder='Qual sua ideia?' />
-            <TextInput onChangeText={(text) => this.setState({ description: text })} style={ideaStyle.idea__inputDescription} placeholder='Descreva como seria este recurso...' />
+            <TextInput multiline={true} onChangeText={(text) => this.setState({ description: text })} style={ideaStyle.idea__inputDescription} placeholder='Descreva como seria este recurso...' />
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 14 }}>
               <TextInput onChangeText={(text) => this.setState({ name: text })} style={ideaStyle.name} placeholder='Nome' />
               <TextInput onChangeText={(text) => this.setState({ email: text })} style={ideaStyle.email} placeholder='E-mail' />
