@@ -27,7 +27,14 @@ const homeStyle = StyleSheet.create({
     borderRadius: 5,
     fontWeight: "bold",
     textDecorationLine: 'underline'
-  }
+  },
+  item: {
+    backgroundColor: '#ededed',
+    padding: 30,
+    marginVertical: 8,
+    marginHorizontal: 20,
+    borderRadius: 7
+}
 
 });
 export { homeStyle };

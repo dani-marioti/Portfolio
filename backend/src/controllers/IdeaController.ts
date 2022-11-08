@@ -27,7 +27,9 @@ export const findAll: RequestHandler = async (req, res) => {
 };
 
 export const createIdea: RequestHandler = async (req, res) => {
+  console.log(req.body)
     try {
+      if(req.body) req.body.status = "Pending";
       const idea = await db.idea.create({ data: req.body })
 
       res.status(201).send({

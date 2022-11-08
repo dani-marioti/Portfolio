@@ -49,7 +49,8 @@ const ideaStyle = StyleSheet.create({
         height: 200,
         borderRadius: 7,
         fontWeight: "bold",
-        backgroundColor: '#ededed'
+        backgroundColor: '#ededed',
+        textAlignVertical: 'top'
     },
     idea__form: {
         width: "80%"

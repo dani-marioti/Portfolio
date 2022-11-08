@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d15346b5-9d82-4a20-803a-67396532ff54" name="Changes" comment="" />
+    <list default="true" id="d15346b5-9d82-4a20-803a-67396532ff54" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/controllers/IdeaController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/controllers/IdeaController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Home/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Home/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Idea/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Idea/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Idea/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Idea/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ideias-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ideias-api.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
