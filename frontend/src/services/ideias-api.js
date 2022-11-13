@@ -3,8 +3,8 @@ import axios from 'axios';
 let apiIdeas = {}
 
 apiIdeas.sendIdea = async (idea) => {
-    console.log(idea);
-    axios.post(`http://192.168.1.40:3000/idea`, idea, null)
+    console.log(idea);// 192.168.1.40
+    axios.post(`http://192.168.5.53:3000/idea`, idea, null)
     .then(res => {
         console.log(res.data)
         // 
@@ -17,7 +17,7 @@ apiIdeas.sendIdea = async (idea) => {
 
 
 apiIdeas.getIdeas = async () => {
-    let data = await axios.get(`http://192.168.1.40:3000/idea`)
+    let data = await axios.get(`http://192.168.5.53:3000/idea`)
     // .then(res => {
     //     console.log(res.data)
     //     // 

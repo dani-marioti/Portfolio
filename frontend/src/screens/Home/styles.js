@@ -31,12 +31,20 @@ const homeStyle = StyleSheet.create({
   item: {
     backgroundColor: '#ededed',
     padding: 10,
-    // height: 100,
     marginVertical: 8,
     marginHorizontal: 20,
     borderRadius: 7,
     flexDirection: 'row'
-}
+  },
+  idea: {
+    backgroundColor: '#ededed',
+
+    fontWeight: "bold",
+  },
+    like:{
+        width:20,
+        height:20
+    }
 
 });
 export { homeStyle };

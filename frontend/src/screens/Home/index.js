@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Image, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { homeStyle } from './styles';
 import apiIdeas from '../../services/ideias-api';
+import { FontAwesome } from 'react-native-vector-icons'
 
 class Home extends Component {
 
@@ -38,20 +39,19 @@ class Home extends Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.setState({ selectedIdea: item, visibleIdeaModal: true })} style={homeStyle.item} >
-      <View style={{width: '20%', backgroundColor: 'red', justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center' }}>
+        <FontAwesome name="user" size={20} color="black" />
         <Text>{item.name}</Text>
       </View>
 
-      <View style={{width: '60%', height: '100%', backgroundColor: 'blue', padding: 10}}>
+      <View style={{ width: '60%', height: '100%', padding: 10 }}>
         <Text style={homeStyle.idea}>{item.title}</Text>
         <Text numberOfLines={3} ellipsizeMode='tail'>{item.description}</Text>
       </View>
 
-      <View style={{width: '20%', backgroundColor: 'green', justifyContent: 'center', alignItems: 'center'}}>
-        <Text>HEHEH</Text>
+      <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center' }}>
+        <FontAwesome name="thumbs-up" size={20} color="black" />
       </View>
-
-
     </TouchableOpacity>
   );
 
