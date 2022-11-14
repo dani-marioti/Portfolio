@@ -38,13 +38,13 @@ const homeStyle = StyleSheet.create({
   },
   idea: {
     backgroundColor: '#ededed',
-
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
-    like:{
-        width:20,
-        height:20
-    }
+  person: {
+    fontSize: 9,
+    alignSelf: "center",
+    color: "FFFFF"
+  },
 
 });
 export { homeStyle };

@@ -41,7 +41,7 @@ class Home extends Component {
     <TouchableOpacity onPress={() => this.setState({ selectedIdea: item, visibleIdeaModal: true })} style={homeStyle.item} >
       <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center' }}>
         <FontAwesome name="user" size={20} color="black" />
-        <Text>{item.name}</Text>
+        <Text style={homeStyle.person}>{item.name}</Text>
       </View>
 
       <View style={{ width: '60%', height: '100%', padding: 10 }}>
@@ -86,9 +86,7 @@ class Home extends Component {
         >
           <View>
             <Text>{JSON.stringify(this.state.selectedIdea)}</Text>
-
             <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
-
           </View>
         </Modal>
 

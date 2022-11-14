@@ -9,38 +9,24 @@ class Login extends Component {
   goToTasks = () => {
     this.props.navigation.navigate('Tasks')
   }
-  goToForgotPassword = () => {
-    this.props.navigation.navigate('Password')
-  }
 
   render() {
     return (
       <KeyboardAvoidingView behavior={Platform.OS == "android" ? "padding" : "height"} style={[loginStyle.container, loginStyle.darkbg]}>
+        
         <View style={{ flex: 0, backgroundColor: 'white' }}>
           <Image source={require('../../assets/Img/logo.png')} />
-        </View>
-
-        <View>
-          <Text style={loginStyle.login__msg}>Usuário ou senha inválidos!</Text>
         </View>
 
         <View style={loginStyle.login__form}>
           <TextInput style={loginStyle.login__input} placeholder='Usuário:' />
           <TextInput style={loginStyle.login__input} placeholder='Senha:' secureTextEntry={true} />
-          <Text
-            style={loginStyle.login__forgotPassword}
-            variant="link"
-            className="mt-4 full"
-            type="button"
-            onPress={this.goToForgotPassword}>Esqueceu a senha?
-          </Text>
-
         </View>
+
         <View>
           <TouchableOpacity onPress={this.goToTasks} style={loginStyle.login__button}>
             <Text style={loginStyle.login__buttonText}>Entrar</Text>
           </TouchableOpacity>
-
         </View>
 
       </KeyboardAvoidingView>

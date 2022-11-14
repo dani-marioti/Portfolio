@@ -17,7 +17,6 @@ const Routes = () => {
         <Stack.Screen name="Idea" component={Idea} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Tasks" component={Tasks} />
-        <Stack.Screen name="Password" component={Password} />
       </Stack.Navigator>
     </NavigationContainer>
   )
