@@ -13,7 +13,7 @@
 ### Objetivo
 
   - Aplicativo de envio de ideias para um determinado software, apresentando duas interfaces:
-    - Interface do cliente: Além de acessar a lista de ideias encaminhadas, de acordo com seu *status* e situação, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, por parte do cliente.
+    - Interface do cliente: Além de acessar a lista de ideias encaminhadas de acordo com seu *status*, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, por parte do cliente.
     - Inteface do analista: Visualização da lista de solicitações e função de aprovação ou reprovação de novas ideias. 
     
 ### Design do projeto - Figma
