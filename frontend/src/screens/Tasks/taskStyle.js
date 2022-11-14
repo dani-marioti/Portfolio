@@ -41,10 +41,13 @@ const taskStyle = StyleSheet.create({
 
     fontWeight: "bold",
   },
-    like:{
-        width:20,
-        height:20
-    }
+  person: {
+    fontSize: 9,
+    marginHorizontal: 2,
+    marginVertical: 3,
+    alignSelf: "center",
+    color: "#8B008B"
+  }
 
 });
 export { taskStyle };

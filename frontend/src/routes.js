@@ -5,7 +5,6 @@ import Home from '../src/screens/Home'
 import Idea from '../src/screens/Idea'
 import Login from './screens/Login';
 import Tasks from './screens/Tasks';
-import Password from './screens/Password';
 
 const Stack = createStackNavigator();
 

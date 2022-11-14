@@ -12,7 +12,8 @@ class Idea extends Component {
       title: '',
       description: '',
       name: '',
-      email: ''
+      email: '',
+      statu: 'Peding'
     };
   }
 

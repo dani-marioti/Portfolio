@@ -42,9 +42,11 @@ const homeStyle = StyleSheet.create({
   },
   person: {
     fontSize: 9,
+    marginHorizontal: 2,
+    marginVertical: 3,
     alignSelf: "center",
-    color: "FFFFF"
-  },
+    color: "#8B008B"
+  }
 
 });
 export { homeStyle };

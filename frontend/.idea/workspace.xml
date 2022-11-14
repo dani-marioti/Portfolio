@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d15346b5-9d82-4a20-803a-67396532ff54" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/screens/Tasks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Tasks/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Tasks/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/prisma/dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

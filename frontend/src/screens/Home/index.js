@@ -39,7 +39,7 @@ class Home extends Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.setState({ selectedIdea: item, visibleIdeaModal: true })} style={homeStyle.item} >
-      <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ borderRightWidth: 1, width: '20%', justifyContent: 'center', alignItems: 'center' }}>
         <FontAwesome name="user" size={20} color="black" />
         <Text style={homeStyle.person}>{item.name}</Text>
       </View>
@@ -49,7 +49,7 @@ class Home extends Component {
         <Text numberOfLines={3} ellipsizeMode='tail'>{item.description}</Text>
       </View>
 
-      <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ borderLeftWidth: 1, borderColor: "black", width: '20%', justifyContent: 'center', alignItems: 'center' }}>
         <FontAwesome name="thumbs-up" size={20} color="black" />
       </View>
     </TouchableOpacity>
