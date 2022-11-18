@@ -30,11 +30,13 @@ const homeStyle = StyleSheet.create({
   },
   item: {
     backgroundColor: '#ededed',
-    padding: 10,
+    paddingVertical: 10,
     marginVertical: 8,
     marginHorizontal: 20,
     borderRadius: 7,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    elevation:10,
+    height: 120,
   },
   idea: {
     backgroundColor: '#ededed',
@@ -44,6 +46,7 @@ const homeStyle = StyleSheet.create({
     fontSize: 9,
     marginHorizontal: 2,
     marginVertical: 3,
+    textAlign: 'center',
     alignSelf: "center",
     color: "#8B008B"
   }

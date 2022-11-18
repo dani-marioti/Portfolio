@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { homeStyle } from './styles';
 import apiIdeas from '../../services/ideias-api';
-import { FontAwesome } from 'react-native-vector-icons'
+import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
 
 class Home extends Component {
 
@@ -10,9 +10,22 @@ class Home extends Component {
     super();
     this.state = {
       ideas: [],
-      selectedIdea: null,
+      selectedIdea: {},
       visibleIdeaModal: false
     };
+
+    this.statusDic = {
+      'pending': "Pendente",
+      'aproved': "Aprovado",
+      'rejected': "Reprovado"
+    }
+
+    this.statusDicColor = {
+      'pending': "#27C7F9",
+      'aproved': "#2F835B",
+      'rejected': "#696969"
+    }
+
   }
 
   async componentDidMount() {
@@ -39,18 +52,21 @@ class Home extends Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.setState({ selectedIdea: item, visibleIdeaModal: true })} style={homeStyle.item} >
-      <View style={{ borderRightWidth: 1, width: '20%', justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{  width: '20%', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
         <FontAwesome name="user" size={20} color="black" />
         <Text style={homeStyle.person}>{item.name}</Text>
       </View>
 
-      <View style={{ width: '60%', height: '100%', padding: 10 }}>
+      <View style={{ borderLeftWidth: 1, borderRightWidth: 1, borderLeftColor: '#696969', borderRightColor: '#696969', width: '60%', height: '100%', padding: 10 }}>
         <Text style={homeStyle.idea}>{item.title}</Text>
         <Text numberOfLines={3} ellipsizeMode='tail'>{item.description}</Text>
       </View>
 
-      <View style={{ borderLeftWidth: 1, borderColor: "black", width: '20%', justifyContent: 'center', alignItems: 'center' }}>
-        <FontAwesome name="thumbs-up" size={20} color="black" />
+      <View style={{  borderColor: "black", width: '20%', alignItems: 'center'}}>
+        <Text style={{borderRadius: 7, position: 'absolute', paddingHorizontal: 5, paddingVertical: 2, fontSize: 12, color: 'white', backgroundColor: this.statusDicColor[item.status]}} >{this.statusDic[item.status]}</Text>
+        <View style={{ height: "100%", justifyContent: 'center'}}>
+          <FontAwesome name="thumbs-up" size={20} color="black" />
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -84,9 +100,34 @@ class Home extends Component {
           visible={this.state.visibleIdeaModal}
           onRequestClose={() => { this.setState({ visibleIdeaModal: false }) }}
         >
-          <View>
-            <Text>{JSON.stringify(this.state.selectedIdea)}</Text>
-            <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
+          <View style={{ margin: 10 }}>
+            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
+          </View>
+
+          <View><Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} /></View>
+
+          <View style={{ elevation: 30, padding: 10, backgroundColor: '#ededed', marginVertical: 8, marginHorizontal: 20, borderRadius: 7 }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold', borderBottomWidth: 1, borderBottomColor: '#C0C0C0' }}>
+              {this.state.selectedIdea.title}
+            </Text>
+
+            <View style={{ marginVertical: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <MaterialIcons name="person" size={20} color="black" />
+                <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
+                  {this.state.selectedIdea.name}
+                </Text>
+              </View>
+
+              <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
+                {this.state.selectedIdea.email}
+              </Text>
+
+            </View>
+
+            <Text>{this.state.selectedIdea.description}</Text>
+
           </View>
         </Modal>
 
