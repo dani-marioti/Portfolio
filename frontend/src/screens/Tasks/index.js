@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Image, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import { Image, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { taskStyle } from './taskStyle'
 import apiIdeas from '../../services/ideias-api';
-import { FontAwesome } from 'react-native-vector-icons'
+import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
 
 class Tasks extends Component {
 
@@ -10,9 +10,22 @@ class Tasks extends Component {
     super();
     this.state = {
       ideas: [],
-      selectedIdea: null,
+      selectedIdea: {},
       visibleIdeaModal: false
     };
+
+    this.statusDic = {
+      'pending': "Pendente",
+      'aproved': "Aprovado",
+      'rejected': "Reprovado"
+    }
+
+    this.statusDicColor = {
+      'pending': "#27C7F9",
+      'aproved': "#2F835B",
+      'rejected': "#696969"
+    }
+
   }
 
   async componentDidMount() {
@@ -62,6 +75,56 @@ class Tasks extends Component {
           keyExtractor={item => item.id}
           renderItem={this.renderItem}
         />
+
+        <Modal
+          visible={this.state.visibleIdeaModal}
+          onRequestClose={() => { this.setState({ visibleIdeaModal: false }) }}
+        >
+          <View style={{ margin: 10 }}>
+            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
+          </View>
+
+          <View><Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} /></View>
+
+          <View style={{ elevation: 30, padding: 10, backgroundColor: '#ededed', marginVertical: 8, marginHorizontal: 20, borderRadius: 7 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: '#C0C0C0', paddingVertical: 7 }}>
+              <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                {this.state.selectedIdea.title}
+              </Text>
+              <Text
+                style={{
+                  borderRadius: 7,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  fontSize: 12,
+                  color: 'white',
+                  backgroundColor: this.statusDicColor[this.state.selectedIdea.status]
+                }}>
+                {this.statusDic[this.state.selectedIdea.status]}
+              </Text>
+
+            </View>
+
+
+            <View style={{ marginVertical: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <MaterialIcons name="person" size={20} color="black" />
+                <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
+                  {this.state.selectedIdea.name}
+                </Text>
+              </View>
+
+              <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
+                {this.state.selectedIdea.email}
+              </Text>
+
+            </View>
+
+            <Text>{this.state.selectedIdea.description}</Text>
+
+          </View>
+        </Modal>
 
       </View>
     );
