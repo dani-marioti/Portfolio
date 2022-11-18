@@ -52,7 +52,7 @@ class Home extends Component {
 
   renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.setState({ selectedIdea: item, visibleIdeaModal: true })} style={homeStyle.item} >
-      <View style={{  width: '20%', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
+      <View style={{ width: '20%', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
         <FontAwesome name="user" size={20} color="black" />
         <Text style={homeStyle.person}>{item.name}</Text>
       </View>
@@ -62,9 +62,9 @@ class Home extends Component {
         <Text numberOfLines={3} ellipsizeMode='tail'>{item.description}</Text>
       </View>
 
-      <View style={{  borderColor: "black", width: '20%', alignItems: 'center'}}>
-        <Text style={{borderRadius: 7, position: 'absolute', paddingHorizontal: 5, paddingVertical: 2, fontSize: 12, color: 'white', backgroundColor: this.statusDicColor[item.status]}} >{this.statusDic[item.status]}</Text>
-        <View style={{ height: "100%", justifyContent: 'center'}}>
+      <View style={{ borderColor: "black", width: '20%', alignItems: 'center' }}>
+        <Text style={{ borderRadius: 7, position: 'absolute', paddingHorizontal: 5, paddingVertical: 2, fontSize: 12, color: 'white', backgroundColor: this.statusDicColor[item.status] }} >{this.statusDic[item.status]}</Text>
+        <View style={{ height: "100%", justifyContent: 'center' }}>
           <FontAwesome name="thumbs-up" size={20} color="black" />
         </View>
       </View>
@@ -107,9 +107,24 @@ class Home extends Component {
           <View><Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} /></View>
 
           <View style={{ elevation: 30, padding: 10, backgroundColor: '#ededed', marginVertical: 8, marginHorizontal: 20, borderRadius: 7 }}>
-            <Text style={{ fontSize: 16, fontWeight: 'bold', borderBottomWidth: 1, borderBottomColor: '#C0C0C0' }}>
-              {this.state.selectedIdea.title}
-            </Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: '#C0C0C0', paddingVertical: 7 }}>
+              <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                {this.state.selectedIdea.title}
+              </Text>
+              <Text
+                style={{
+                  borderRadius: 7,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  fontSize: 12,
+                  color: 'white',
+                  backgroundColor: this.statusDicColor[this.state.selectedIdea.status]
+                }}>
+                {this.statusDic[this.state.selectedIdea.status]}
+              </Text>
+
+            </View>
+
 
             <View style={{ marginVertical: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
 
