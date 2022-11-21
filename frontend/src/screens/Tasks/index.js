@@ -55,7 +55,7 @@ class Tasks extends Component {
 
       <View style={{ borderLeftWidth: 1, borderLeftColor: '#696969', borderRightColor: '#696969', width: '80%', height: '100%', padding: 10 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5 }}>
-          <Text style={{...taskStyle.idea, width: '70%'}}>{item.title}</Text>
+          <Text style={{ ...taskStyle.idea, width: '70%' }}>{item.title}</Text>
           <Text style={{ ...taskStyle.stateIdea, backgroundColor: this.statusDicColor[item.status] }}>
             {this.statusDic[item.status]}
           </Text>
@@ -93,7 +93,7 @@ class Tasks extends Component {
 
           <View style={taskStyle.modalIdea}>
             <View style={taskStyle.ideaTitle}>
-              <Text style={{ width: '80%',fontSize: 16, fontWeight: 'bold' }}>
+              <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
                 {this.state.selectedIdea.title}
               </Text>
 
@@ -121,9 +121,20 @@ class Tasks extends Component {
             <Text>{this.state.selectedIdea.description}</Text>
 
           </View>
-        </Modal>
 
-      </View>
+          <View style={taskStyle.situation}>
+            <TouchableOpacity>
+              <Text style={taskStyle.aproved}>Aprovar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={taskStyle.rejected}>Reprovar</Text>
+            </TouchableOpacity>
+          </View>
+
+        </Modal >
+
+
+      </View >
     );
   }
 }

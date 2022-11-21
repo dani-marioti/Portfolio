@@ -49,6 +49,13 @@ const taskStyle = StyleSheet.create({
     alignSelf: "center",
     color: "#8B008B"
   },
+  situation: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginVertical: 8,
+    marginHorizontal: 20
+  },
   aproved: {
     alignSelf: 'center',
     fontSize: 16,
