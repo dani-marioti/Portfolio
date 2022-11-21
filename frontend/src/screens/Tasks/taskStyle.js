@@ -45,6 +45,7 @@ const taskStyle = StyleSheet.create({
     fontSize: 9,
     marginHorizontal: 2,
     marginVertical: 3,
+    textAlign: 'center',
     alignSelf: "center",
     color: "#8B008B"
   },
@@ -56,9 +57,9 @@ const taskStyle = StyleSheet.create({
     width: 180,
     backgroundColor: '#2F835B',
     height: 40,
+    marginVertical: 15,
     borderRadius: 7,
-    elevation: 20,
-    color:'white',
+    color: 'white',
     textAlign: 'center',
     fontWeight: 'bold'
   },
@@ -67,13 +68,42 @@ const taskStyle = StyleSheet.create({
     fontSize: 16,
     padding: 7,
     marginBottom: 15,
+    marginVertical: 15,
     width: 180,
     height: 40,
     borderRadius: 7,
-    backgroundColor: '#696969', 
-    color:'white',
+    backgroundColor: '#696969',
+    color: 'white',
     textAlign: 'center',
     fontWeight: 'bold'
+  },
+  modalIdea: {
+    elevation: 30,
+    padding: 10,
+    backgroundColor: '#ededed',
+    marginVertical: 8,
+    marginHorizontal: 20,
+    borderRadius: 7
+  },
+  ideaTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: '#C0C0C0',
+    paddingVertical: 7
+  },
+  stateIdea: {
+    borderRadius: 7,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    fontSize: 12,
+    color: 'white',
+    height: 20
+  },
+  userIdea: {
+    marginVertical: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 
 });

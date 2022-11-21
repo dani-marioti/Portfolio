@@ -104,29 +104,23 @@ class Home extends Component {
             <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
           </View>
 
-          <View><Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} /></View>
+          <View>
+            <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
+          </View>
 
-          <View style={{ elevation: 30, padding: 10, backgroundColor: '#ededed', marginVertical: 8, marginHorizontal: 20, borderRadius: 7 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: '#C0C0C0', paddingVertical: 7 }}>
-              <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+          <View style={homeStyle.modalIdea}>
+            <View style={homeStyle.ideaTitle}>
+              <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
                 {this.state.selectedIdea.title}
               </Text>
+
               <Text
-                style={{
-                  borderRadius: 7,
-                  paddingHorizontal: 5,
-                  paddingVertical: 2,
-                  fontSize: 12,
-                  color: 'white',
-                  backgroundColor: this.statusDicColor[this.state.selectedIdea.status]
-                }}>
+                style={{ ...homeStyle.stateIdea, backgroundColor: this.statusDicColor[this.state.selectedIdea.status] }}>
                 {this.statusDic[this.state.selectedIdea.status]}
               </Text>
-
             </View>
 
-
-            <View style={{ marginVertical: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={homeStyle.userIdea}>
 
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <MaterialIcons name="person" size={20} color="black" />
