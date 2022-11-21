@@ -47,6 +47,33 @@ const taskStyle = StyleSheet.create({
     marginVertical: 3,
     alignSelf: "center",
     color: "#8B008B"
+  },
+  aproved: {
+    alignSelf: 'center',
+    fontSize: 16,
+    padding: 7,
+    marginBottom: 15,
+    width: 180,
+    backgroundColor: '#2F835B',
+    height: 40,
+    borderRadius: 7,
+    elevation: 20,
+    color:'white',
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  rejected: {
+    alignSelf: "center",
+    fontSize: 16,
+    padding: 7,
+    marginBottom: 15,
+    width: 180,
+    height: 40,
+    borderRadius: 7,
+    backgroundColor: '#696969', 
+    color:'white',
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 
 });

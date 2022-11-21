@@ -124,7 +124,15 @@ class Tasks extends Component {
             <Text>{this.state.selectedIdea.description}</Text>
 
           </View>
+          <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20 }}>
+          <Text style={taskStyle.aproved}>Aprovar</Text>
+          <Text style={taskStyle.rejected}>Reprovar</Text>
+        </TouchableOpacity>
         </Modal>
+
+        
+
+
 
       </View>
     );
