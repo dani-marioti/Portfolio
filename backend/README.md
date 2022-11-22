@@ -1,4 +1,6 @@
-# Portal de Ideias
+# Portfólio
+
+## Portal de Ideias
 
 ### Autor
 
@@ -10,13 +12,23 @@
 
 ### Objetivo
 
-  - Aplicativo de envio de ideias para um determinado software, apresentando duas interfaces:
-    - Interface do cliente: Além de acessar a lista de ideias encaminhadas, de acordo com seu *status* e situação, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, por parte do cliente.
-    - Inteface do analista: Visualização da lista de solicitações e função de aprovação ou reprovação de novas ideias. 
+O aplicativo tem como objetivo realizar o controle de envio de ideias enviadas pelo cliente, tornando possível além do envio de ideias, o controle da situação da mesma, tanto por parte do cliente quanto por parte da empresa prestadora de serviço. 
 
-# Tecnologias utilizadas
+O aplicativo de envio de ideias apresenta duas interfaces:
+    - Interface do cliente: Além de acessar a lista de ideias encaminhadas de acordo com seu *status*, podendo ser aprovada, reprovada ou pendente, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, onde o mesmo deve informar o título da ideia, sua descrição e suas informações básicas de nome e e-mail.
+    - Inteface do analista: Pelo lado do analista, após realizado o longin no aplicativo, o mesmo possui o controle de aprovação ou reprovação de novas ideias, além da visualização de todas as solicitações recebidas, bem como seu *status*. 
+    
+### Design do projeto - Figma
 
-## Depêndencias
+- [Portal de Ideias](https://www.figma.com/file/M5gOjNuWJQ7vaumCCdAofh/Portal-de-Ideias-Simples?node-id=0%3A1)
+
+### Controle de tarefas - Trello
+
+- [Portfolio](https://trello.com/invite/b/3NnNrPQF/ATTIbb606dbf4d3ee433adab7b41a092a29594FAF6D3/portfolio)
+
+## Tecnologias utilizadas
+
+### Dependências backend
 
   - [Node.js (versão 16)](https://nodejs.org/en/)
   - [Express](https://expressjs.com)
@@ -24,10 +36,11 @@
   - [Prisma js](https://www.prisma.io/docs/)
   - [ESlint](https://eslint.org/docs/)
   
-## Inicializando
+##### Inicializando
 
   - API
     - `npm install`
+    - Na raiz, criar pasta .env contendo a seguinte informação: DATABASE_URL="file:./dev.db"
     - `npm start`
     - `localhost:3000`
   - Eslint
