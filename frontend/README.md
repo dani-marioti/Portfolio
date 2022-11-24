@@ -8,24 +8,28 @@
 ### Professor
 
   - [Diogo Winck](https://github.com/dvwinck)
-
+  
 ### Objetivo
 
-  - Aplicativo de envio de ideias para um determinado software, apresentando duas interfaces:
-    - Interface do cliente: Além de acessar a lista de ideias encaminhadas, de acordo com seu *status* e situação, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, por parte do cliente.
-    - Inteface do analista: Visualização da lista de solicitações e função de aprovação ou reprovação de novas ideias. 
+O aplicativo tem como objetivo realizar o controle de envio de ideias enviadas pelo cliente, tornando possível além do envio de ideias, o controle da situação da mesma, tanto por parte do cliente quanto por parte da empresa prestadora de serviço. 
+
+O aplicativo de envio de ideias apresenta duas interfaces:
+    - Interface do cliente: Além de acessar a lista de ideias encaminhadas de acordo com seu *status*, podendo ser aprovada, reprovada ou pendente, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, onde o mesmo deve informar o título da ideia, sua descrição e suas informações básicas de nome e e-mail.
+    - Inteface do analista: Pelo lado do analista, após realizado o longin no aplicativo, o mesmo possui o controle de aprovação ou reprovação de novas ideias, além da visualização de todas as solicitações recebidas, bem como seu *status*. 
 
 # Tecnologias utilizadas
 
-## Dependências
+### Dependências frontend
 
+  - [React Native](https://reactnative.dev/docs/getting-started)
   - [Expo](https://expo.io/)
   - [Axios](https://github.com/axios/axios)
   - [Node.js (versão 14)](https://nodejs.org/en/)
   - [React Navigation](https://reactnavigation.org/)
   - [ESlint](https://eslint.org/docs/)
+  - [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
   
-## Inicializando
+### Inicializando
 
   - Aplicação:
     - `npm install`
@@ -38,8 +42,8 @@
 
 ## Exemplos de uso
 
-- Realizar o envio de ideia de melhoria para o software em questão
-- Analisar melhorias solicitadas e aprovadas para o sofware em questão
+- Realizar o envio de ideia de melhoria
+- Analisar melhorias solicitadas e aprovadas
 - Visualizar novas solicitações, aprovar ou reprovar
 
 ## Diagramas
