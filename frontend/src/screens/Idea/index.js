@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Image } 
 import { ideaStyle } from './styles';
 import apiIdeias from '../../services/ideias-api';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { FontAwesome } from 'react-native-vector-icons';
 
 class Idea extends Component {
 
@@ -27,15 +28,21 @@ class Idea extends Component {
     let data = await apiIdeias.sendIdea(idea);
     console.log("RES: ", data)
 
-    this.props.route.params.onGoBack();
-    this.props.navigation.goBack();
+    this.onGoBack();
     // let data = await apiIdeas.sendIdea(idea);
+  }
+
+  onGoBack = () => {
+    this.props.route.params.refreshIdeas();
+    this.props.navigation.goBack();
   }
 
   render() {
     return (
       <KeyboardAvoidingView style={[ideaStyle.container, ideaStyle.darkbg]}>
-
+        <View style={{ margin: 10 }}>
+          <FontAwesome name="arrow-left" size={25} color="black" onPress={this.onGoBack} />
+        </View>
         <View style={{ flex: 0, backgroundColor: 'white' }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20 }}>
             <Image style={ideaStyle.Image} source={require('../../assets/Img/lampada.png')} />

@@ -4,7 +4,7 @@ let apiIdeas = {}
 
 apiIdeas.sendIdea = async (idea) => {
     console.log(idea);
-    axios.post(`http://172.19.0.1:3000/idea`, idea, null)
+    axios.post(`http://192.168.5.53:3000/idea`, idea, null)
     .then(res => {
         console.log(res.data)
         // 
@@ -17,7 +17,20 @@ apiIdeas.sendIdea = async (idea) => {
 
 
 apiIdeas.getIdeas = async () => {
-    let data = await axios.get(`http://172.19.0.1:3000/idea`)
+    let data = await axios.get(`http://192.168.5.53:3000/idea`)
+    // .then(res => {
+    //     console.log(res.data)
+    //     // 
+    //     return res.data;
+    // })
+    // .catch(error => {
+    //     console.log(error) // tratar erro
+    // });
+    return data;
+}
+
+apiIdeas.updateIdea = async (update, id) => {
+    let data = await axios.put(`http://192.168.5.53:3000/idea/`+id, update, null)
     // .then(res => {
     //     console.log(res.data)
     //     // 

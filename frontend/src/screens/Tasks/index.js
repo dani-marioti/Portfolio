@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
+import { Image, Text, View, TouchableOpacity, FlatList, Modal, Alert } from 'react-native';
 import { taskStyle } from './taskStyle'
 import apiIdeas from '../../services/ideias-api';
 import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
@@ -29,21 +29,29 @@ class Tasks extends Component {
   }
 
   async componentDidMount() {
+    this.refreshTasks();
+  }
+
+  refreshTasks = async () => {
     // inicia a tela
     let res = await apiIdeas.getIdeas();
     if (res.data && res.data.ideas) this.setState({ ideas: res.data.ideas });
-    console.log(this.state.ideas.length)
   }
 
-  goToIdea = () => {
-    this.props.navigation.navigate('Idea', {
-      onGoBack: async () => {
-        // inicia a tela
-        let res = await apiIdeas.getIdeas();
-        if (res.data && res.data.ideas) this.setState({ ideas: res.data.ideas });
-        console.log(this.state.ideas.length)
-      }
-    })
+  updateStatus = async (status) => {
+    if (Alert.alert("Confirmação", "Tem certeza que deseja alterar o status para " +
+      this.statusDic[status] +
+      "?")) return;
+
+    // atualiza back-end
+    let res = await apiIdeas.updateIdea({ status: status }, this.state.selectedIdea.id)
+
+    if (res.status == 200) {
+      // atualiza localmente
+      let s = { ...this.state.selectedIdea, status: status };
+      this.setState({ selectedIdea: s })
+    }
+
   }
 
   renderItem = ({ item }) => (
@@ -80,11 +88,11 @@ class Tasks extends Component {
 
         <Modal
           visible={this.state.visibleIdeaModal}
-          onRequestClose={() => { this.setState({ visibleIdeaModal: false }) }}
+          onRequestClose={() => { this.setState({ visibleIdeaModal: false }); this.refreshTasks() }}
         >
 
           <View style={{ margin: 10 }}>
-            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
+            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }); this.refreshTasks() }} />
           </View>
 
           <View>
@@ -123,10 +131,10 @@ class Tasks extends Component {
           </View>
 
           <View style={taskStyle.situation}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.updateStatus('aproved')}>
               <Text style={taskStyle.aproved}>Aprovar</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.updateStatus('rejected')}>
               <Text style={taskStyle.rejected}>Reprovar</Text>
             </TouchableOpacity>
           </View>

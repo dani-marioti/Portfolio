@@ -5,7 +5,7 @@ const loginStyle = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   darkbg: {
     backgroundColor: "#FFF"

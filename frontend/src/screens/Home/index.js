@@ -37,17 +37,24 @@ class Home extends Component {
 
   goToIdea = () => {
     this.props.navigation.navigate('Idea', {
-      onGoBack: async () => {
+      refreshIdeas: async () => {
         // inicia a tela
         let res = await apiIdeas.getIdeas();
         if (res.data && res.data.ideas) this.setState({ ideas: res.data.ideas });
-        console.log(this.state.ideas.length)
+        console.log("Veio do IDEA: ", this.state.ideas.length)
       }
     })
   }
 
   goToLogin = () => {
-    this.props.navigation.navigate('Login')
+    this.props.navigation.navigate('Login', {
+      refreshIdeas: async () => {
+        // inicia a tela
+        let res = await apiIdeas.getIdeas();
+        if (res.data && res.data.ideas) this.setState({ ideas: res.data.ideas });
+        console.log("Veio do Login: ", this.state.ideas.length)
+      }
+    })
   }
 
   renderItem = ({ item }) => (
