@@ -2,7 +2,7 @@
 // TouchableOpacity: faz com que uma View responda apropriadamente a toques. Ao ser clicado, a opacidade da View é diminuída, mas de maneira gradual, diminuindo assim a sua intensidade.
 
 import React, { Component } from 'react';
-import { KeyboardAvoidingView, Platform, Image, TouchableOpacity, Text, View, TextInput, ToastAndroid } from 'react-native';
+import { StatusBar,StyleSheet,KeyboardAvoidingView, Platform, Image, TouchableOpacity, Text, View, TextInput, ToastAndroid } from 'react-native';
 import { loginStyle } from '../Login/styles';
 import { FontAwesome } from 'react-native-vector-icons';
 import apiLogin from '../../services/login-api';
@@ -26,12 +26,11 @@ class Login extends Component {
     }
 
     let res = await apiLogin.login({ email: this.state.email, password: this.state.password });
-    console.log(res);
     if (res.status == 200) {
       this.props.navigation.navigate('Tasks');
     } else {
       // colocar mensagem de erro
-      ToastAndroid.showWithGravity("Erro de login", ToastAndroid.LONG, ToastAndroid.TOP);
+      ToastAndroid.showWithGravity("Erro de login! Verifique as informações preenchidas e tente novamente.", ToastAndroid.LONG, ToastAndroid.TOP);
     }
 
     this.setState({ email: "", password: "" });
