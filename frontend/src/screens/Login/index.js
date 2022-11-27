@@ -17,7 +17,6 @@ class Login extends Component {
     };
   }
 
-  // falta limpar o campo após o login
   login = async () => {
 
     if (this.state.email.trim().length == 0 || this.state.password.trim().length == 0) {
@@ -29,7 +28,6 @@ class Login extends Component {
     if (res.status == 200) {
       this.props.navigation.navigate('Tasks');
     } else {
-      // colocar mensagem de erro
       ToastAndroid.showWithGravity("Erro de login! Verifique as informações preenchidas e tente novamente.", ToastAndroid.LONG, ToastAndroid.TOP);
     }
 

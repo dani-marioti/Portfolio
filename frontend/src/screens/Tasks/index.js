@@ -40,8 +40,10 @@ class Tasks extends Component {
 
   updateStatus = async (status) => {
     if (Alert.alert("Confirmação", "Tem certeza que deseja alterar o status para " +
-      this.statusDic[status] +
-      "?")) return;
+      this.statusDic[status] + "?",
+      [
+        { text: "Confirmar", onPress: () => console.log("OK Pressed") }
+      ])) return;
 
     // atualiza back-end
     let res = await apiIdeas.updateIdea({ status: status }, this.state.selectedIdea.id)

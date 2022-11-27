@@ -8,8 +8,7 @@
       <change beforePath="$PROJECT_DIR$/../backend/prisma/dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/prisma/dev.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ideias-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ideias-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/login-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/login-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Tasks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Tasks/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
