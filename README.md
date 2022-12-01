@@ -35,6 +35,8 @@ O aplicativo de envio de ideias apresenta duas interfaces:
   - [SQlite](https://www.sqlite.org/index.html)
   - [Prisma js](https://www.prisma.io/docs/)
   - [ESlint](https://eslint.org/docs/)
+  - [Jest](https://jestjs.io/pt-BR/docs/getting-started#usando-typescript)
+  - [Jest Mock Extended](https://www.prisma.io/docs/guides/testing/unit-testing)
   
 ##### Inicializando
 
@@ -42,6 +44,12 @@ O aplicativo de envio de ideias apresenta duas interfaces:
     - `npm install`
     - `npm start`
     - `localhost:3000`
+  - Eslint
+    - `npx eslint --init`
+    - `npm run lint`
+  - Jest
+    - npx jest --init
+    - npm run test
 
 ### Dependências frontend
 
@@ -60,11 +68,9 @@ O aplicativo de envio de ideias apresenta duas interfaces:
     - `npm start`
   - Android Studio
     - `expo start --android`
-
-### Eslint
-
-- `npx eslint --init`
-- `npm run lint`
+  - Eslint
+    - `npx eslint --init`
+    - `npm run lint` 
 
 ### Exemplos de uso
 
