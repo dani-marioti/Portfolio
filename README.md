@@ -40,7 +40,6 @@ O aplicativo de envio de ideias apresenta duas interfaces:
 
   - API
     - `npm install`
-    - Na raiz, criar pasta .env contendo a seguinte informação: DATABASE_URL="file:./dev.db"
     - `npm start`
     - `localhost:3000`
 
