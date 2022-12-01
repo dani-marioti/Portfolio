@@ -1,5 +1,5 @@
-import express, { urlencoded, json } from 'express'
-import routes from './routes'
+import express, { urlencoded, json } from 'express';
+import routes from './routes';
 import db from './db';
 
 const app = express();
