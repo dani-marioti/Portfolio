@@ -3,6 +3,7 @@ import { Image, Text, View, TouchableOpacity, FlatList, Modal, Alert } from 'rea
 import { taskStyle } from './taskStyle'
 import apiIdeas from '../../services/ideias-api';
 import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
+import { ScrollView } from 'react-native-gesture-handler';
 
 class Tasks extends Component {
 
@@ -17,13 +18,16 @@ class Tasks extends Component {
     this.statusDic = {
       'pending': "Pendente",
       'aproved': "Aprovado",
-      'rejected': "Reprovado"
+      'rejected': "Reprovado",
+      'delivered': "Entregue"
+
     }
 
     this.statusDicColor = {
       'pending': "#27C7F9",
       'aproved': "#2F835B",
-      'rejected': "#696969"
+      'rejected': "#FF0000",
+      'delivered': "#000"
     }
 
   }
@@ -80,6 +84,7 @@ class Tasks extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 
+
         <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
 
         <FlatList
@@ -92,55 +97,62 @@ class Tasks extends Component {
           visible={this.state.visibleIdeaModal}
           onRequestClose={() => { this.setState({ visibleIdeaModal: false }); this.refreshTasks() }}
         >
+          <ScrollView>
 
-          <View style={{ margin: 10 }}>
-            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }); this.refreshTasks() }} />
-          </View>
-
-          <View>
-            <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
-          </View>
-
-          <View style={taskStyle.modalIdea}>
-            <View style={taskStyle.ideaTitle}>
-              <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
-                {this.state.selectedIdea.title}
-              </Text>
-
-              <Text
-                style={{ ...taskStyle.stateIdea, backgroundColor: this.statusDicColor[this.state.selectedIdea.status] }}>
-                {this.statusDic[this.state.selectedIdea.status]}
-              </Text>
+            <View style={{ margin: 10 }}>
+              <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }); this.refreshTasks() }} />
+            </View>
+            <View>
+              <TouchableOpacity onPress={() => this.updateStatus('delivered')}>
+                <Text style={taskStyle.delivered}>Entregue</Text>
+              </TouchableOpacity>
             </View>
 
-            <View style={taskStyle.userIdea}>
+            <View>
+              <Image style={{ flex: 1, marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
+            </View>
 
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <MaterialIcons name="person" size={20} color="black" />
-                <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
-                  {this.state.selectedIdea.name}
+            <View style={taskStyle.modalIdea}>
+              <View style={taskStyle.ideaTitle}>
+                <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
+                  {this.state.selectedIdea.title}
+                </Text>
+
+                <Text
+                  style={{ ...taskStyle.stateIdea, backgroundColor: this.statusDicColor[this.state.selectedIdea.status] }}>
+                  {this.statusDic[this.state.selectedIdea.status]}
                 </Text>
               </View>
 
-              <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
-                {this.state.selectedIdea.email}
-              </Text>
+              <View style={taskStyle.userIdea}>
+
+                <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                  <MaterialIcons name="person" size={20} color="black" />
+                  <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
+                    {this.state.selectedIdea.name}
+                  </Text>
+                </View>
+
+                <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
+                  {this.state.selectedIdea.email}
+                </Text>
+
+              </View>
+
+              <Text>{this.state.selectedIdea.description}</Text>
 
             </View>
 
-            <Text>{this.state.selectedIdea.description}</Text>
+            <View style={taskStyle.situation}>
+              <TouchableOpacity onPress={() => this.updateStatus('aproved')}>
+                <Text style={taskStyle.aproved}>Aprovar</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.updateStatus('rejected')}>
+                <Text style={taskStyle.rejected}>Reprovar</Text>
+              </TouchableOpacity>
+            </View>
 
-          </View>
-
-          <View style={taskStyle.situation}>
-            <TouchableOpacity onPress={() => this.updateStatus('aproved')}>
-              <Text style={taskStyle.aproved}>Aprovar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => this.updateStatus('rejected')}>
-              <Text style={taskStyle.rejected}>Reprovar</Text>
-            </TouchableOpacity>
-          </View>
-
+          </ScrollView>
         </Modal >
 
 

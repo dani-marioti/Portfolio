@@ -2,7 +2,7 @@
 // TouchableOpacity: faz com que uma View responda apropriadamente a toques. Ao ser clicado, a opacidade da View é diminuída, mas de maneira gradual, diminuindo assim a sua intensidade.
 
 import React, { Component } from 'react';
-import { StatusBar,StyleSheet,KeyboardAvoidingView, Platform, Image, TouchableOpacity, Text, View, TextInput, ToastAndroid } from 'react-native';
+import { KeyboardAvoidingView, Platform, Image, TouchableOpacity, Text, View, TextInput, ToastAndroid } from 'react-native';
 import { loginStyle } from '../Login/styles';
 import { FontAwesome } from 'react-native-vector-icons';
 import apiLogin from '../../services/login-api';

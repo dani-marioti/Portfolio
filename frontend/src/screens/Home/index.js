@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
+import { Image, ScrollView,Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { homeStyle } from './styles';
 import apiIdeas from '../../services/ideias-api';
 import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
@@ -17,13 +17,15 @@ class Home extends Component {
     this.statusDic = {
       'pending': "Pendente",
       'aproved': "Aprovado",
-      'rejected': "Reprovado"
+      'rejected': "Reprovado",
+      'delivered': "Entregue"
     }
 
     this.statusDicColor = {
       'pending': "#27C7F9",
       'aproved': "#2F835B",
-      'rejected': "#696969"
+      'rejected': "#FF0000",
+      'delivered': "#000"
     }
 
   }
@@ -107,44 +109,47 @@ class Home extends Component {
           visible={this.state.visibleIdeaModal}
           onRequestClose={() => { this.setState({ visibleIdeaModal: false }) }}
         >
-          <View style={{ margin: 10 }}>
-            <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
-          </View>
+          <ScrollView>
 
-          <View>
-            <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
-          </View>
-
-          <View style={homeStyle.modalIdea}>
-            <View style={homeStyle.ideaTitle}>
-              <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
-                {this.state.selectedIdea.title}
-              </Text>
-
-              <Text
-                style={{ ...homeStyle.stateIdea, backgroundColor: this.statusDicColor[this.state.selectedIdea.status] }}>
-                {this.statusDic[this.state.selectedIdea.status]}
-              </Text>
+            <View style={{ margin: 10 }}>
+              <FontAwesome name="arrow-left" size={20} color="black" onPress={() => { this.setState({ visibleIdeaModal: false }) }} />
             </View>
 
-            <View style={homeStyle.userIdea}>
+            <View>
+              <Image style={{ marginTop: 30, alignSelf: 'center' }} source={require('../../assets/Img/logo.png')} />
+            </View>
 
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <MaterialIcons name="person" size={20} color="black" />
-                <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
-                  {this.state.selectedIdea.name}
+            <View style={homeStyle.modalIdea}>
+              <View style={homeStyle.ideaTitle}>
+                <Text style={{ width: '80%', fontSize: 16, fontWeight: 'bold' }}>
+                  {this.state.selectedIdea.title}
+                </Text>
+
+                <Text
+                  style={{ ...homeStyle.stateIdea, backgroundColor: this.statusDicColor[this.state.selectedIdea.status] }}>
+                  {this.statusDic[this.state.selectedIdea.status]}
                 </Text>
               </View>
 
-              <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
-                {this.state.selectedIdea.email}
-              </Text>
+              <View style={homeStyle.userIdea}>
+
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <MaterialIcons name="person" size={20} color="black" />
+                  <Text style={{ fontSize: 14, color: "#8B008B", marginLeft: 5 }}>
+                    {this.state.selectedIdea.name}
+                  </Text>
+                </View>
+
+                <Text style={{ fontSize: 14, color: "#696969", alignItems: 'center' }}>
+                  {this.state.selectedIdea.email}
+                </Text>
+
+              </View>
+
+              <Text>{this.state.selectedIdea.description}</Text>
 
             </View>
-
-            <Text>{this.state.selectedIdea.description}</Text>
-
-          </View>
+          </ScrollView>
         </Modal>
 
       </View>
