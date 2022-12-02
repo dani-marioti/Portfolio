@@ -28,8 +28,8 @@ class Idea extends Component {
     let data = await apiIdeias.sendIdea(idea);
     console.log("RES: ", data)
 
-    this.onGoBack();
-    // let data = await apiIdeas.sendIdea(idea);
+    this.props.navigation.goBack();
+    this.props.route.params.refreshIdeas();
   }
 
   onGoBack = () => {
