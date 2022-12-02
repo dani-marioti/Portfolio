@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Image, ScrollView,Text, View, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { homeStyle } from './styles';
 import apiIdeas from '../../services/ideias-api';
-import { FontAwesome, MaterialIcons } from 'react-native-vector-icons'
-
+import { FontAwesome, MaterialIcons } from 'react-native-vector-icons';
 class Home extends Component {
 
   constructor() {

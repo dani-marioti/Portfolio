@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "es2021": true,
         "node": true
@@ -17,5 +17,6 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": "off"
     }
 }

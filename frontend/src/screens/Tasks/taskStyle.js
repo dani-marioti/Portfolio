@@ -87,11 +87,8 @@ const taskStyle = StyleSheet.create({
   delivered: {
     flex:0,
     alignSelf: 'flex-end',
-    //justifyContent: 'flex-end',
     fontSize: 15,
-    padding: 3,
-    //marginBottom: 10,
-    //marginVertical: 80,
+    padding: 5,
     width: 90,
     height: 30,
     borderRadius: 7,
