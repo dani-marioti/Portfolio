@@ -15,7 +15,7 @@
 O aplicativo tem como objetivo realizar o controle de envio de ideias enviadas pelo cliente, tornando possível além do envio de ideias, o controle da situação da mesma, tanto por parte do cliente quanto por parte da empresa prestadora de serviço. 
 
 O aplicativo de envio de ideias apresenta duas interfaces:
-    - Interface do cliente: Além de acessar a lista de ideias encaminhadas de acordo com seu *status*, podendo ser aprovada, reprovada ou pendente, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, onde o mesmo deve informar o título da ideia, sua descrição e suas informações básicas de nome e e-mail.
+    - Interface do cliente: Além de acessar a lista de ideias encaminhadas de acordo com seu *status*, podendo ser aprovada, reprovada, pendente ou entregue, a aplicação  apresenta o botão de envio de novas solicitações de melhoria, onde o mesmo deve informar o título da ideia, sua descrição e suas informações básicas de nome e e-mail.
     - Inteface do analista: Pelo lado do analista, após realizado o longin no aplicativo, o mesmo possui o controle de aprovação ou reprovação de novas ideias, além da visualização de todas as solicitações recebidas, bem como seu *status*. 
     
 ### Design do projeto - Figma
@@ -76,7 +76,7 @@ O aplicativo de envio de ideias apresenta duas interfaces:
 
 - Realizar o envio de ideia
 - Analisar melhorias solicitadas e aprovadas
-- Visualizar novas solicitações, aprovar ou reprovar
+- Visualizar novas solicitações, aprovar, reprovar ou marcar como entregue
 
 ## Diagramas
 
