@@ -94,7 +94,8 @@ O aplicativo de envio de ideias apresenta duas interfaces:
       NovaIdeia --> Cancelar
       Entrar --> Ideia
       Ideia --> Aprovar
-      Ideia --> Reprovar    
+      Ideia --> Reprovar  
+      Ideia --> Entregar
   ```
   
  ### Diagrama de Classe
@@ -125,6 +126,7 @@ O aplicativo de envio de ideias apresenta duas interfaces:
         +nova()
         +aprovada()
         +reprovada()
+        +entregue()
     }
 
     class Inicio{
@@ -145,6 +147,7 @@ O aplicativo de envio de ideias apresenta duas interfaces:
         +acessarIdeia()
         +aprovar()
         +reprovar()
+        +entregar()
     }
     
 ```
