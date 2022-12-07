@@ -1,5 +1,4 @@
 import { Context } from './context';
-import db from '../db';
 interface CreateUser {
     email: string
     password: string

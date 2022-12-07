@@ -1,4 +1,3 @@
-import { prismaMock } from './singleton';
 import { MockContext, Context, createMockContext } from './context';
 import { createUser, updateUserPassword } from './functions-with-context'
 
